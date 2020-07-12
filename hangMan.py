@@ -67,6 +67,18 @@ def print_scaffold(guesses, wd): # prints the scaffold
 		if again == "1":
 			hangMan()
 		return
-
+    
+def selectWord():
+	file = open('FREQ')
+	words = file.readlines() 
+	myword = 'a'
+	while len(myword) < 4: 
+    myword = random.choice(words)
+  	myword = str(myword).strip('[]')
+  	myword = str(myword).strip("''")
+  	myword = str(myword).strip("\n")
+  	myword = str(myword).strip("\r")
+	myword = myword.lower()
+	return myword
 
 hangMan()
